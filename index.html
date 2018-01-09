@@ -1,36 +1,158 @@
-<link rel = "stylesheet"
-   type = "text/css"
-   href = "css/styles.css" />
-<html  class="page">
-	<h1>Susmit Agrawal</h1>
-	<div class="CardView">
-		<div class="CardView" id="infoDiv">
-			<p>
-				Hey guys! I am an engineering student currently in my second year. I am pursuing by B.E. degree in Computer Sceince and Engineering at SMVIT college, Bangalore, India.
+<html class="page">
+	<head>
+		<link rel="stylesheet" href="css/styles.css">
+		<link rel="import" href="html/page1.html">
+		<title>
+			Electro Exacta
+		</title>
+	</head>
+	<div id="banner">
+		<body>
+			<h1 align="center">Electro Exacta</h1>
+			<table id="tabbar" align="center">
+				<tr>
+					<td class="tab" id="tab1" onclick="openFrame('page1')" onmouseover="setOver('tab1')" onmouseout="setOut('tab1')">Home</td>
+					<td class="tab" id="tab2" onclick="openFrame('page2')" onmouseover="setOver('tab2')" onmouseout="setOut('tab2')">Projects</td>
+					<td class="tab" id="tab3" onclick="openFrame('page3')" onmouseover="setOver('tab3')" onmouseout="setOut('tab3')">Contact Us</td>
+					<td class="tab" id="tab4" onclick="openFrame('page4')" onmouseover="setOver('tab4')" onmouseout="setOut('tab4')">View Map</td>
+				</tr>
+			</table>
+		</body>
+	</div>
+	<div id="page1" class="tabFrame">
+		<body>
+			<!p style="color:brown"
+			Retail Sellers of Electrical & Electronic Components, Kits, Equipment, Tools, Practical Physics Items and Educational Games.
 			</p>
-			<p>
-				Coding is not just something I have to do, it is my passion. I know how to code in C, C++, Java, Python, HTML, CSS, Javascript and Perl. Apart from these, I know x86 assembly. I can also write shell scripts for Linux.
-			</p>
-			<p>
-				One of my favourite hobbies is android app development. I am well versed with Android's internal architecture and have 	even developed some custom firmwares myself. I also make apps as a freelancer.
-			</p>
-			<p>
-				My other hobbies include playing the Guitar and Drums. I also enjoy reading and watching movies. Big Marvel fan, BTW.
-			</p>
+			<img class="CardView" src="res/logo_wm2.jpg" height="80%" width="100%"></img>
+		</body>
+	</div>
+	<div id="page2" class="tabFrame" style="display:none">
+		<div class="CardView" align="center" id="VideoObject">
+			<div>
+				<iframe class="VideoFrame" align="right" width="560" height="315" src="https://www.youtube.com/embed/flNoIxXQJKs" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe>
+			</div>
 		</div>
 	</div>
-	<div>
-		<a href="https://www.facebook.com/people/Susmit-Agrawal/100002540392994">
-			<img src="images/facebook.png" width="50" height="50" class="icon_link" />
-		</a>
-		<a href="https://github.com/Susmit-A">
-			<img src="images/github.png" width="50" height="50" class="icon_link"/>
-		</a>
-		<a href="https://play.google.com/store/apps/developer?id=Susmit+Agrawal">
-			<img src="images/play.png" width="50" height="50" class="icon_link"/>
-		</a>
-		<a href="https://forum.xda-developers.com/member.php?u=5845918">
-			<img src="images/xda.png" width="50" height="50" class="icon_link"/>
-		</a>
+	<div id="page3" class="tabFrame" style="display:none">
+		<div class="CardView" id="AddressCard">
+			<body>
+				Address:<br/>
+				#2831 (Ground Floor)<br/>
+				15th Main, 2nd Cross<br/>
+				'E' Block, Sahakarnagar<br/>
+				Bangalore - 560092<br/>
+				<br/>
+				Phone No.: +91 9481 963 354<br/>
+				<br/>
+				Email: mail@electroexacta.com<br/>
+			</body>
+		</div>
 	</div>
+	<div id="page4" class="tabFrame" style="display:none">
+		<div class="CardView">
+			<iframe src="map_page.html" height="80%" width="100%" frameborder="0" seamless></iframe>
+		</div>
+	</div>
+	<script>
+		window.scrollTo(0, 0);
+		function setOver(id)
+		{
+			var x=document.getElementById(id);
+			x.style.cursor="pointer";
+			if(x.style.background=="white")
+			{
+				x.style.background="white";
+				x.style.color="blue";
+				return;
+			}
+			//this.style.fontWeight="bold";
+			x.style.background="blue";
+			x.style.color="white";
+		}
+		function setOut(id)
+		{
+			var x=document.getElementById(id);
+			if(x.style.background=="white")
+			{
+				x.style.background="white";
+				x.style.color="blue";
+				return;
+			}
+			x.style.background="powderblue";
+			x.style.cursor="auto";
+		}
+		function setTabAttr(item)
+		{
+			item.style.background="powderblue";
+			item.style.cursor="auto";
+			item.style.color="white";
+		}
+		function openFrame(id)
+		{
+			var i;
+			var x = document.getElementsByClassName("tabFrame");
+			var y = document.getElementsByClassName("tab");
+    			for (i = 0; i < x.length; i++) {
+        			x[i].style.display = "none";
+				setTabAttr(y[i]);
+			}
+			document.getElementById(id).style.display = "block";
+			document.getElementById(id) 
+		}
+		/*for(i=0;i<l;i++)
+		{
+			function setTabAttr(int)
+			{
+				tabs[int].style.background="powderblue";
+				tabs[int].style.cursor="auto";
+				tabs[int].style.color="white";
+				pages[int].style.display="none";
+			}
+			tabs[i].onmouseover=function()
+			{
+				this.style.cursor="pointer";
+				if(this.style.background=="white")
+				{
+					this.style.background="white";
+					this.style.color="blue";
+					return;
+				}
+				//this.style.fontWeight="bold";
+				this.style.background="blue";
+				this.style.color="white";
+			}
+			tabs[i].onmouseout=function()
+			{
+				if(this.style.background=="white")
+				{
+					this.style.background="white";
+					this.style.color="blue";
+					return;
+				}
+				this.style.background="powderblue";
+				this.style.cursor="auto";
+			}
+			tabs[i].onclick=function()
+			{
+				var j;
+				for(j=0;j<l;j++)
+				{
+					if(j!=i)
+					{
+						setTabAttr(j);
+					}
+					else
+					{
+						clickedTabNumber=j;
+						pages[clickedTabNumber].style.display="block";
+					}
+				}
+				this.style.background="white";
+				this.style.cursor="auto";
+				this.style.color="blue";
+			}
+		}
+		tabs[0].click();*/
+	</script>
 </html>
